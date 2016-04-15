@@ -49,6 +49,7 @@ public class CloudTagAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         mPosition += 1;
         System.out.println("mPosition:" + mPosition);
+
         ViewHolder viewHolder;
         int color = mList.get(position).hashCode() | 0xF0000000 & 0xFFF5F5F5;
 
