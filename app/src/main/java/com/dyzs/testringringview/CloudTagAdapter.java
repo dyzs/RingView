@@ -48,13 +48,10 @@ public class CloudTagAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        mPosition += 1;
-
         ViewHolder viewHolder;
         int color = mList.get(position).hashCode() | 0xF0000000 & 0xFFF5F5F5;
 
         if (convertView == null) {
-//            mCurTimeMillis += 100;
             convertView = View.inflate(mContext, R.layout.item_cloud_tag, null);
             RingRingViewVer2 ll_ring = (RingRingViewVer2) convertView.findViewById(R.id.ll_cloud_tag_ring);
 
@@ -75,16 +72,25 @@ public class CloudTagAdapter extends BaseAdapter {
         viewHolder.ll_cloud_tag_ring.setProgress(new Random().nextInt(100) + 1);// 设置当前进度
         viewHolder.tv_cloud_tag_name.setText(mList.get(position));
         viewHolder.tv_cloud_tag_name.setTextColor(color);
-        mCurTimeMillis += 200;
-        if (mPosition % 4 == 0) {
-            mCurTimeMillis = 0;
+
+                mPosition += 1;
+        mCurTimeMillis += 100;
+        if (mPosition % 2 == 0) {
+            mCurTimeMillis = 50;
         }
+
         actAnimation(convertView);
         return convertView;
 
+//        121212的方法
+//        mPosition += 1;
+//        mCurTimeMillis += 100;
+//        if (mPosition % 2 == 0) {
+//            mCurTimeMillis = 50;
+//        }
+
         // 200 millis   %2              2
         // 200 millis   %4              最佳效果(表示当前的列数 columns)
-
 
 //        if (convertView == null) {
 //            mCurTimeMillis += 100;
@@ -151,8 +157,6 @@ public class CloudTagAdapter extends BaseAdapter {
     private void actAnimation(View convertView) {
 //        ViewHelper.setTranslationX(convertView, -100f);
 //        ViewPropertyAnimator.animate(convertView).setInterpolator(new OvershootInterpolator()).translationX(0f).setDuration(300).setStartDelay(mCurTimeMillis);
-
-
         ViewHelper.setScaleX(convertView, 0.0f);    // 初始缩放为0.1f
         ViewHelper.setScaleY(convertView, 0.0f);    // 初始缩放为0.1f
         ViewHelper.setAlpha(convertView, 0.0f);     // 初始透明为0.1f
@@ -161,7 +165,6 @@ public class CloudTagAdapter extends BaseAdapter {
         // 执行 0.2 秒动画插入器
         ViewPropertyAnimator.animate(convertView).setInterpolator(new OvershootInterpolator(2)).scaleX(1f).setDuration(700).setStartDelay(mCurTimeMillis);
         ViewPropertyAnimator.animate(convertView).setInterpolator(new OvershootInterpolator(2)).scaleY(1f).setDuration(700).setStartDelay(mCurTimeMillis);
-
 //      ----------------------
 //        ViewHelper.setScaleX(convertView, 0.5f);    // 初始缩放为0.5f
 //        ViewHelper.setScaleY(convertView, 0.5f);    // 初始缩放为0.5f
@@ -170,5 +173,32 @@ public class CloudTagAdapter extends BaseAdapter {
 //        ViewPropertyAnimator.animate(convertView).setInterpolator(new OvershootInterpolator(2)).alpha(1f).setDuration(600).setStartDelay(mCurTimeMillis + 100);
 //        ViewPropertyAnimator.animate(convertView).setInterpolator(new OvershootInterpolator(2)).scaleX(1f).setDuration(600).setStartDelay(mCurTimeMillis + 100);
 //        ViewPropertyAnimator.animate(convertView).setInterpolator(new OvershootInterpolator(2)).scaleY(1f).setDuration(600).setStartDelay(mCurTimeMillis + 100);
+    }
+
+    private void actAnimation2(View convertView) {
+        ViewHelper.setScaleX(convertView, 0.0f);    // 初始缩放为0.1f
+        ViewHelper.setScaleY(convertView, 0.0f);    // 初始缩放为0.1f
+        ViewHelper.setAlpha(convertView, 0.0f);     // 初始透明为0.1f
+        ViewPropertyAnimator.animate(convertView).setInterpolator(new OvershootInterpolator(2)).alpha(1f).setDuration(700).setStartDelay(mCurTimeMillis);
+        ViewPropertyAnimator.animate(convertView).setInterpolator(new OvershootInterpolator(2)).scaleX(1f).setDuration(700).setStartDelay(mCurTimeMillis);
+        ViewPropertyAnimator.animate(convertView).setInterpolator(new OvershootInterpolator(2)).scaleY(1f).setDuration(700).setStartDelay(mCurTimeMillis);
+    }
+
+    private void actAnimation3(View convertView) {
+        ViewHelper.setScaleX(convertView, 0.0f);    // 初始缩放为0.1f
+        ViewHelper.setScaleY(convertView, 0.0f);    // 初始缩放为0.1f
+        ViewHelper.setAlpha(convertView, 0.0f);     // 初始透明为0.1f
+        ViewPropertyAnimator.animate(convertView).setInterpolator(new OvershootInterpolator(2)).alpha(1f).setDuration(700).setStartDelay(mCurTimeMillis);
+        ViewPropertyAnimator.animate(convertView).setInterpolator(new OvershootInterpolator(2)).scaleX(1f).setDuration(700).setStartDelay(mCurTimeMillis);
+        ViewPropertyAnimator.animate(convertView).setInterpolator(new OvershootInterpolator(2)).scaleY(1f).setDuration(700).setStartDelay(mCurTimeMillis);
+    }
+
+    private void actAnimation4(View convertView) {
+        ViewHelper.setScaleX(convertView, 0.0f);    // 初始缩放为0.1f
+        ViewHelper.setScaleY(convertView, 0.0f);    // 初始缩放为0.1f
+        ViewHelper.setAlpha(convertView, 0.0f);     // 初始透明为0.1f
+        ViewPropertyAnimator.animate(convertView).setInterpolator(new OvershootInterpolator(2)).alpha(1f).setDuration(700).setStartDelay(mCurTimeMillis);
+        ViewPropertyAnimator.animate(convertView).setInterpolator(new OvershootInterpolator(2)).scaleX(1f).setDuration(700).setStartDelay(mCurTimeMillis);
+        ViewPropertyAnimator.animate(convertView).setInterpolator(new OvershootInterpolator(2)).scaleY(1f).setDuration(700).setStartDelay(mCurTimeMillis);
     }
 }
