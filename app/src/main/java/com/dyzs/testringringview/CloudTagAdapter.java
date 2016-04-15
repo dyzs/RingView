@@ -25,6 +25,7 @@ public class CloudTagAdapter extends BaseAdapter {
     private List<String> mList;
     private int mCurTimeMillis = -100;
     private int mPosition = 0;
+
     public CloudTagAdapter(Context context, ArrayList<String> list) {
         this.mContext = context;
         this.mList = list;
@@ -48,7 +49,6 @@ public class CloudTagAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         mPosition += 1;
-        System.out.println("mPosition:" + mPosition);
 
         ViewHolder viewHolder;
         int color = mList.get(position).hashCode() | 0xF0000000 & 0xFFF5F5F5;
@@ -76,14 +76,14 @@ public class CloudTagAdapter extends BaseAdapter {
         viewHolder.tv_cloud_tag_name.setText(mList.get(position));
         viewHolder.tv_cloud_tag_name.setTextColor(color);
         mCurTimeMillis += 200;
-        if (mPosition % 3 == 0) {
+        if (mPosition % 4 == 0) {
             mCurTimeMillis = 0;
         }
         actAnimation(convertView);
         return convertView;
 
-        // 200 millis   %5
-        // w00 millis   %2
+        // 200 millis   %2              2
+        // 200 millis   %4              最佳效果(表示当前的列数 columns)
 
 
 //        if (convertView == null) {
