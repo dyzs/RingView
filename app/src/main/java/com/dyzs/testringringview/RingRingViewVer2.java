@@ -86,11 +86,11 @@ public class RingRingViewVer2 extends View {
 //        mPaint.setTypeface(Typeface.DEFAULT_BOLD);          // 设置字体
         mPaint.setTypeface(Typeface.MONOSPACE);          // 设置字体
         float textWidth = mPaint.measureText(percent + ""); // %测量字体宽度，我们需要根据字体的宽度设置在圆环中间
-        if (percent != 0 && mStyle == STROKE) {
+        if (percent != 0) { // && mStyle == STROKE
             canvas.drawText(
                     percent + "",               // 绘制的文本
                     mCenterW - textWidth / 2,   // 文本的X轴减去文字宽度的一半开始，达到X轴的居中效果
-                    mCenterW + mTextSize / 2,
+                    mCenterW + mTextSize / 2,   // 文本的Y轴，从左下角开始
                     mPaint
                     );
         }
@@ -208,7 +208,7 @@ public class RingRingViewVer2 extends View {
         if (mRingRadius < 0.0f) {
             mRingRadius = mCenterW - mRingWidth/2;
         }
-        return mCenterW - mRingWidth/2;        // 圆环的半径等于宽度的一半减去环宽的一半
+        return mCenterW - mRingWidth / 2;        // 圆环的半径等于宽度的一半减去环宽的一半
     }
 
     public void setIsDrawRingProgress(boolean b) {
