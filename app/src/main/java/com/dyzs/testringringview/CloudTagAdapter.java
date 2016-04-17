@@ -51,19 +51,27 @@ public class CloudTagAdapter extends BaseAdapter {
         System.out.println("pos" + position);
         mPosition += 1;
         int row = mPosition / 4;
-        if (mPosition < 4 * (row + 1) && ((row) % 2 == 1)) {
-            mCurTimeMillis = 200;
-        } else {
+
+//        if (mPosition < 4 * (row + 1) && ((row) % 2 == 1)) {
+//            mCurTimeMillis = 200;
+//        } else {
+//            mCurTimeMillis = 0;
+//        }
+
+        // 奇偶数波纹
+        mCurTimeMillis += 200;
+        if (mPosition % 2 == 0) {
             mCurTimeMillis = 0;
         }
-//        mPosition += 1;
-//        mCurTimeMillis += 100;
-//        if (mPosition % 2 == 0) {
-//            mCurTimeMillis = 50;
-//        }
+
+
 //        if (mPosition < 4) {
 //            mCurTimeMillis += 200;
-//        } else {
+//        }
+//        else if (mPosition == 4) {
+//            mCurTimeMillis = 0;
+//        }
+//        else {
 //            if ((mPosition) == (row * 4)) {
 //                mCurTimeMillis = 100;
 //            } else {
