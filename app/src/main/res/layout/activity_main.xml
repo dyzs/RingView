@@ -24,23 +24,6 @@
         android:layout_width="match_parent"
         android:layout_height="0.4dp"
         android:background="@color/material_blue_grey_800" />
-    <!--<LinearLayout-->
-        <!--android:id="@+id/ll_act_ringring"-->
-        <!--android:layout_width="100dp"-->
-        <!--android:layout_height="100dp"-->
-        <!--android:orientation="vertical"-->
-        <!--/>-->
-    <!--<Button-->
-        <!--android:id="@+id/btn"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="bottom"-->
-        <!--android:text="重新绘制"-->
-        <!--/>-->
-    <!--<com.dyzs.testringringview.YinjiSwipeRefreshLayout-->
-        <!--android:id="@+id/swipe_container"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
         <GridView
             android:padding="10dp"
             android:id="@+id/gv_cloud_tag_container"
@@ -53,5 +36,4 @@
             android:columnWidth="90dp"
             android:scrollbars="none"
             />
-    <!--</com.dyzs.testringringview.YinjiSwipeRefreshLayout>-->
 </LinearLayout>

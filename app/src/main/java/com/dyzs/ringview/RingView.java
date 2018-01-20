@@ -1,4 +1,4 @@
-package com.dyzs.testringringview;
+package com.dyzs.ringview;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -11,10 +11,8 @@ import android.view.View;
 
 /**
  * Created by maidou on 2015/12/30.
- * Rain rain go away.Little Johnny wants to play
- * Rain rain go away,come again some other day,Rain rain go away
  */
-public class RingRingViewVer2 extends View {
+public class RingView extends View {
     private Paint mPaint;               // 画笔
     private int mRingColor;             // 环形颜色
     private int mTextColor;             // 进度数字颜色
@@ -34,15 +32,15 @@ public class RingRingViewVer2 extends View {
     public static final int FILL = 1;
 
 
-    public RingRingViewVer2(Context context) {
+    public RingView(Context context) {
         this(context, null);
     }
 
-    public RingRingViewVer2(Context context, AttributeSet attrs) {
+    public RingView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public RingRingViewVer2(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RingView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }

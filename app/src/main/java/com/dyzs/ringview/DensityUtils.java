@@ -1,4 +1,4 @@
-package com.dyzs.testringringview;
+package com.dyzs.ringview;
 
 import android.content.Context;
 import android.util.TypedValue;

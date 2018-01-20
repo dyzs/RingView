@@ -1,23 +1,17 @@
-package com.dyzs.testringringview;
+package com.dyzs.ringview;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
-import android.widget.AbsListView;
 import android.widget.GridView;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class MainActivity extends Activity {
 
     private Context mContext;
-    private RingRingViewVer2 rrv;
+    private RingView rrv;
     private int progress = 0;
     private ArrayList<String> mTagsList;
     private CloudTagAdapter mAdapter;

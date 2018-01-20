@@ -1,13 +1,10 @@
-package com.dyzs.testringringview;
+package com.dyzs.ringview;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.OvershootInterpolator;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nineoldandroids.view.ViewHelper;
@@ -18,7 +15,8 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Created by maidou on 2015/12/31.
+ * @author dyzs
+ * Created on 2015/12/31.
  */
 public class CloudTagAdapter extends BaseAdapter {
     private Context mContext;
@@ -85,7 +83,7 @@ public class CloudTagAdapter extends BaseAdapter {
 
         if (convertView == null) {
             convertView = View.inflate(mContext, R.layout.item_cloud_tag, null);
-            RingRingViewVer2 ll_ring = (RingRingViewVer2) convertView.findViewById(R.id.ll_cloud_tag_ring);
+            RingView ll_ring = (RingView) convertView.findViewById(R.id.ll_cloud_tag_ring);
 
             ll_ring.setTextColor(color);
             ll_ring.setRingColor(color);
@@ -171,11 +169,11 @@ public class CloudTagAdapter extends BaseAdapter {
 
     static class ViewHolder{
         TextView tv_cloud_tag_name;
-        RingRingViewVer2 ll_cloud_tag_ring;
+        RingView ll_cloud_tag_ring;
     }
 
-    public static RingRingViewVer2 getRingView(Context context,int color) {
-        RingRingViewVer2 rrv = new RingRingViewVer2(context);
+    public static RingView getRingView(Context context, int color) {
+        RingView rrv = new RingView(context);
         rrv.setTextColor(color);
         rrv.setRingColor(color);
         rrv.setTextSize(DensityUtils.px2sp(context, 120));
